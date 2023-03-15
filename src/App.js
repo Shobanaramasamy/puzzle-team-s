@@ -6,14 +6,6 @@ function App() {
   const [imageWidth, setImageWidth] = useState(820)
   const [croppedImages, setCroppedImages] = useState([])
   const [emptyValue, setEmptyValue] = useState(null)
-  // let array = JSON.parse(localStorage.getItem('puzzle'))
-  // let image = JSON.parse(localStorage.getItem('puzzleImage'))
-
-  // console.log('array', array, 'image', image);
-
-  // array && setCroppedImages(array)
-
-
 
   const handleSubmit = () => {
 
@@ -22,7 +14,6 @@ function App() {
       parts = [],
       img = new Image();
     var matrix = [], k;
-
 
     img.onload = split;
 
@@ -83,7 +74,6 @@ function App() {
         }
       }
       localStorage.setItem('puzzle', JSON.stringify(matrix));
-      // localStorage.setItem('puzzleImage', URL.createObjectURL(uploadedImage));
     }
     img.src = uploadedImage
   }
@@ -139,7 +129,7 @@ function App() {
       <div>
         {uploadedImage && <img width={300} src={uploadedImage} alt='uploaded-file' />}
       </div>
-      {uploadedImage && <div style={{
+      { <div style={{
         display: 'flex',
         width: `${imageWidth}px`,
         gap: '3px',
